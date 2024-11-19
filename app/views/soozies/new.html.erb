@@ -1,4 +1,11 @@
+<h2>Create your Soozie profile</h2>
+
 <%= form_with(model: @user, local: true) do |form| %>
+<div class="form-group">
+    <%= form.label :profile_picture %>
+    <%= form.file_field :profile_picture, class: "form-control" %>
+  </div>
+
   <div class="form-group">
     <%= form.label :eye_color %>
     <%= form.select :eye_color, options_for_select([['Blue', 'blue'], ['Green', 'green'], ['Brown', 'brown'], ['Hazel', 'hazel']]), {}, class: "form-control" %>
