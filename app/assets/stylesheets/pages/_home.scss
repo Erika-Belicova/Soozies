@@ -1,6 +1,9 @@
 // Specific CSS for your home-page
 body {
   position: cover;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   &::before {
     content: "";
     background-image: asset-url("background_picture.png");
@@ -22,7 +25,7 @@ body {
   bottom: 300px; // Adjust as needed
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 5px;
   text-align: center;
   width: 70%; // Adjust as needed
