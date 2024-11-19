@@ -1,12 +1,12 @@
 class SooziesController < ApplicationController
   before_action :set_soozie, only: [:show, :edit, :update]
-  skip_before_action :authenticate_user!
 
   def index
     @soozies = Soozie.all
   end
 
   def show
+    @booking = Booking.new
   end
 
   def new
@@ -15,7 +15,7 @@ class SooziesController < ApplicationController
 
   def create
     @soozie = Soozie.new(soozie_params)
-    if @sozie.save
+    if @soozie.save
       redirect_to soozies_path(@soozie), notice: "Soozie created successfully."
     else
       render :new, status: :unprocessable_entity
@@ -27,7 +27,7 @@ class SooziesController < ApplicationController
 
   def update
     @soozie.update(soozie_params)
-    if @sozie.save
+    if @soozie.save
       redirect_to soozies_path(@soozie), notice: "Soozie created successfully."
     else
       render :new, status: :unprocessable_entity
@@ -41,10 +41,9 @@ class SooziesController < ApplicationController
   end
 
   def soozie_params
-    params.require(@soozie).permit(
-      :first_name, :last_name, :description, :gender, :city, # migration ! not changed in database yet
-      :available, :price, :age, # migration ! not changed in database yet
-      :hair_color, :eye_color, :height, :weight, :user
+    params.require(:soozie).permit(
+      :first_name, :last_name, :description, :gender, :city, :available,
+      :price, :age, :hair_color, :eye_color, :height, :weight, :user
     )
   end
 end
