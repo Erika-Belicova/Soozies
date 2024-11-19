@@ -1,0 +1,6 @@
+<% @users.each do |user| %>
+  <div>
+    <%= cl_image_tag user.photo.key %>
+    <%= user.email %>
+  </div>
+<% end %>
