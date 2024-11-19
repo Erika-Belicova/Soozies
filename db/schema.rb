@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_11_19_100330) do
+ActiveRecord::Schema[7.1].define(version: 2024_11_19_113138) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,10 +59,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_19_100330) do
     t.string "last_name"
     t.text "description"
     t.string "gender"
-    t.string "address"
+    t.string "city"
     t.boolean "available"
     t.integer "price"
-    t.date "birthdate"
     t.string "hair_color"
     t.string "eye_color"
     t.integer "height"
@@ -70,6 +69,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_19_100330) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "age"
     t.index ["user_id"], name: "index_soozies_on_user_id"
   end
 
@@ -87,7 +87,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_19_100330) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "soozies", column: "soozie_id"
+  add_foreign_key "bookings", "soozies"
   add_foreign_key "bookings", "users"
   add_foreign_key "soozies", "users"
 end
