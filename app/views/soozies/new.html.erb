@@ -1,7 +1,19 @@
+<h2>Create your Soozie profile</h2>
+
 <%= form_with(model: @user, local: true) do |form| %>
+<div class="form-group">
+    <%= form.label :profile_picture %>
+    <%= form.file_field :profile_picture, class: "form-control" %>
+  </div>
+
   <div class="form-group">
     <%= form.label :eye_color %>
     <%= form.select :eye_color, options_for_select([['Blue', 'blue'], ['Green', 'green'], ['Brown', 'brown'], ['Hazel', 'hazel']]), {}, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :hair_color %>
+    <%= form.select :hair_color, options_for_select([['Blonde', 'blonde'], ['Brown', 'brown'], ['Black', 'black'], ['Red', 'red'], ['Gray', 'gray']]), {}, class: "form-control" %>
   </div>
 
   <div class="form-group">
@@ -14,7 +26,23 @@
     <%= form.select :weight, options_for_select((40..120).step(5).map { |kg| ["#{kg} kg", kg] }), {}, class: "form-control" %>
   </div>
 
+<div class="form-group">
+    <%= form.label :gender %>
+    <%= form.select :gender, options_for_select([['Male', 'male'], ['Female', 'female'], ['Other', 'other']]), {}, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :price_per_day %>
+    <%= form.select :price_per_day, options_for_select((50..350).step(10).map { |euro| ["#{euro} €", euro] }), {}, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :location %>
+    <%= form.select :location, options_for_select((5..50).step(5).map { |km| ["#{km} km radius from your location", km] }), {}, class: "form-control" %>
+  </div>
+
   <div class="form-group">
     <%= form.submit "Create Profile", class: "btn btn-primary" %>
   </div>
+
 <% end %>
