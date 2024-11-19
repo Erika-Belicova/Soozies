@@ -1,14 +1,10 @@
 class SooziesController < ApplicationController
-<<<<<<< HEAD
-  before_action :set_soozie, only: [ :show, :edit, :update ]
-=======
+  before_action :set_soozie, only: [:show, :edit, :update]
   skip_before_action :authenticate_user!
->>>>>>> dc1e404c6874e53569c7e10e1021d9488a9c8cea
 
   def index
     @soozies = Soozie.all
   end
-<<<<<<< HEAD
 
   def show
   end
@@ -51,6 +47,4 @@ class SooziesController < ApplicationController
       :hair_color, :eye_color, :height, :weight, :user
     )
   end
-=======
->>>>>>> dc1e404c6874e53569c7e10e1021d9488a9c8cea
 end
