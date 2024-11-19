@@ -1,0 +1,6 @@
+<% @soozies.each do |soozie| %>
+  <div>
+    <%= cl_image_tag soozie.photo.key %>
+    <%= soozie.first_name %>
+  </div>
+<% end %>
