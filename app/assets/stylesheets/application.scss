@@ -10,3 +10,61 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer {
+  margin-top: auto;
+  background: #dcf0ff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0px 50px;
+  color: #0864A7;
+  margin-top: auto;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: #0864A7;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 30px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-face {
+  color: #0864A7;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #0864A7;
+  font-size: 60px;
+}
+
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}

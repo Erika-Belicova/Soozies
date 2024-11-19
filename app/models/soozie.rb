@@ -1,3 +1,5 @@
 class Soozie < ApplicationRecord
-  belongs_to :user_id
+  belongs_to :user
+
+  has_one_attached :photo
 end
