@@ -1,0 +1,9 @@
+<h1>My bookings</h1>
+
+<% @bookings.each do |booking| %>
+  <%= booking.soozie.first_name %>
+  <%= booking.start_date %>
+  <%= booking.end_date %>
+<% end %>
+
+<%= link_to "Back", soozies_path %>

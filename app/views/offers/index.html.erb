@@ -1,0 +1,9 @@
+<h1>My offers</h1>
+
+<%= @offers.each do |offer| %>
+  <%= offer.soozie.first_name %>
+  <%= offer.start_date %>
+  <%= offer.end_date %>
+<% end %>
+
+<%= link_to "Back", soozies_path %>
