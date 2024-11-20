@@ -12,6 +12,7 @@ class SooziesController < ApplicationController
 
   def new
     @soozie = Soozie.new
+    @user = current_user
   end
 
   def create
@@ -25,7 +26,7 @@ class SooziesController < ApplicationController
   end
 
   def edit
-  end 
+  end
 
   def update
     @soozie.update(soozie_params)
