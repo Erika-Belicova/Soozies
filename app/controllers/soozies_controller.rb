@@ -24,7 +24,7 @@ class SooziesController < ApplicationController
   end
 
   def edit
-  end
+  end 
 
   def update
     @soozie.update(soozie_params)
