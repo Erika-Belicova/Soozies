@@ -1,5 +1,9 @@
 // Import page-specific CSS files here.
-// @import "home";
+@import "home";
+
+body {
+  background-image: none; // Override the background image from home.scss
+}
 
 .card-category {
   display: flex;
@@ -12,6 +16,7 @@
   border-radius: 5px;
   margin-top: 15px;
   margin-bottom: 15px;
+  background-image: none;
 }
 
 .cards {
