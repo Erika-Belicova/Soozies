@@ -4,7 +4,7 @@
     <div class="row shadow rounded-md p-4">
       <div class="col-6">
         <div class="d-flex justify-content-center align-items-center">
-          <%= cl_image_tag @soozie.photo.key %>
+          <%= cl_image_tag @soozie.photo.key, style: "max-height: 450px; border-radius:16px;" %>
         </div>
       </div>
       <div class="col-6" style="display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end;">
@@ -39,6 +39,16 @@
           <div>
             <div>Weight</div>
             <div class='field-form'><%= @soozie.weight %></div>
+          </div>
+
+           <div>
+            <div>Price per day</div>
+            <div class='field-form'><%= @soozie.price %></div>
+          </div>
+
+          <div>
+            <div>Location</div>
+            <div class='field-form'><%= @soozie.city %></div>
           </div>
 
 
