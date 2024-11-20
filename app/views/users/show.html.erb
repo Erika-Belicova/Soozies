@@ -1,0 +1,7 @@
+
+<p>My email address: <%=  @user.email %></p>
+<p>My Soozies: <%=  @soozies.each do |soozie| %>
+  <%= soozie %>
+<% end %></p>
+<h2>"Create a Soozie"</h2>
+<%= link_to "Create a Soozie", new_soozie_path %>
