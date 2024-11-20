@@ -22,7 +22,9 @@
   <div class="cards">
     <% @soozies.each do |soozie| %>
       <div class="card">
-        <%= cl_image_tag soozie.photo.key, class: "card-image" %>
+        <% if soozie.photo.attached? %>
+          <%= cl_image_tag soozie.photo.key, class: "card-image" %>
+        <% end %>
         <div class="card-content">
           <h3><%= soozie.first_name %></h3>
           <%= link_to 'View', '#', class: 'btn btn-primary' %>

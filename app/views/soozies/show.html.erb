@@ -1,7 +1,76 @@
-<%= @soozie.first_name %>
 
-<%= simple_form_for [@soozie, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.button :submit %>
-<% end %>
+<div class="card-soozie">
+  <div class="container p-4">
+    <div class="row shadow rounded-md p-4">
+      <div class="col-6">
+        <div class="d-flex justify-content-center align-items-center">
+          <%= cl_image_tag @soozie.photo.key %>
+        </div>
+      </div>
+      <div class="col-6" style="display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; width: 100%;">
+
+          <div>
+            <div>Name</div>
+            <div class='field-form'><%= @soozie.name %></div>
+          </div>
+
+
+          <div>
+            <div>Gender</div>
+            <div class='field-form'><%= @soozie.gender %></div>
+          </div>
+
+          <div>
+            <div>Eye color</div>
+            <div class='field-form'><%= @soozie.eye_color %></div>
+          </div>
+
+          <div>
+            <div>Hair color</div>
+            <div class='field-form'><%= @soozie.hair_color %></div>
+          </div>
+
+          <div>
+            <div>Height</div>
+            <div class='field-form'><%= @soozie.height %></div>
+          </div>
+
+          <div>
+            <div>Weight</div>
+            <div class='field-form'><%= @soozie.weight %></div>
+          </div>
+
+
+        </div>
+        <button class="btn-dark"  data-bs-toggle="modal" data-bs-target="#bookingModal">Book</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+
+      <%= simple_form_for [@soozie, @booking] do |f| %>
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Book <%= @soozie.name %></h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <%= f.input :start_date %>
+            <%= f.input :end_date %>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <%= f.submit "Confirm", class: "btn btn-primary" %>
+          </div>
+        </div>
+       <% end %>
+
+    </div>
+  </div>
+
+</div>
