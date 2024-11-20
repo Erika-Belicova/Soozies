@@ -28,12 +28,24 @@ Rails.root.join("db/seeds/users").children.each do |filepath|
   user.save
 end
 
-
 Rails.root.join("db/seeds/soozies").children.each do |filepath|
   username = filepath.to_s.split("/")[-1].split(".")[0]
   file = File.open(filepath)
   puts "Creating soozie #{username}"
-  soozie = Soozie.new(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, user: User.all.sample)
+  soozie = Soozie.new(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    description: Faker::Lorem,
+    gender: Faker::Gender.binary_type,
+    city: Faker::Address.city,
+    available: Faker::Boolean.boolean(true_ratio: 0.8),
+    price: rand(150..1000),
+    hair_color: ["blond", "brown", "ginger", "grey"].sample,
+    eye_color: ["blue", "brown", "red", "green"].sample,
+    height: rand(1.0..2.0),
+    weight: rand(30..150),
+    user: User.all.sample
+  )
   soozie.photo.attach(io: file, filename: "#{username}.jpg", content_type: "image/jpg")
   soozie.save
 end

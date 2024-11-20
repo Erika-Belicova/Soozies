@@ -16,7 +16,8 @@ class SooziesController < ApplicationController
 
   def create
     @soozie = Soozie.new(soozie_params)
-    if @soozie.save
+    @soozie.user = current_user
+    if @soozie.save!
       redirect_to soozies_path(@soozie), notice: "Soozie created successfully."
     else
       render :new, status: :unprocessable_entity
@@ -24,7 +25,7 @@ class SooziesController < ApplicationController
   end
 
   def edit
-  end
+  end 
 
   def update
     @soozie.update(soozie_params)
