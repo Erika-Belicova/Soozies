@@ -1,7 +1,7 @@
-
-<p>My email address: <%=  @user.email %></p>
+<h1>My Soozies</h1>
+<p>Signed in as: <%=  @user.email %></p>
 <p>My Soozies: <%=  @soozies.each do |soozie| %>
   <%= soozie %>
 <% end %></p>
-<h2>"Create a Soozie"</h2>
-<%= link_to "Create a Soozie", new_soozie_path %>
+<%= link_to "My offers", offers_path, class: "btn btn-primary" %>
+<%= link_to "New Soozie", new_soozie_path, class: "btn btn-primary" %>
