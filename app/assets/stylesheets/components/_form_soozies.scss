@@ -8,12 +8,27 @@ h2.profile {
   margin-top: 15px;
 }
 
+form {
+  width: 100%;
+  max-width: 600px; /* Adjust the max-width as needed */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
 
 .form-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Full viewport height */
+  min-height: 77vh; /* Full viewport height */
 }
 
 
@@ -28,8 +43,31 @@ h2.profile {
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  // appearance: none; /* Remove default arrow */
+  background: url('data:image/svg+xml;utf8,<svg fill="%23000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+  background-color: white;
+  background-size: 12px;
 }
 
+.form-city {
+  width: 80%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  background-size: 12px;
+}
+
+.form-control::-ms-expand {
+  display: none; /* Remove default arrow in IE */
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
 .btn-primary {
   background-color: #0864A7;
   border-color: #0864A7;
@@ -38,9 +76,37 @@ h2.profile {
   font-size: 16px;
   border-radius: 4px;
   cursor: pointer;
+  margin-left: auto;
 }
 
-.btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #004085;
+.btn-secondary {
+  background-color: #0864A7;
+  border-color: #0864A7;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
 }
+// .form-control {
+//   width: 80%;
+//   padding: 10px;
+//   font-size: 14px;
+//   border: 1px solid #ccc;
+//   border-radius: 4px;
+// }
+
+// .btn-primary {
+//   background-color: #0864A7;
+//   border-color: #0864A7;
+//   color: white;
+//   padding: 10px 20px;
+//   font-size: 16px;
+//   border-radius: 4px;
+//   cursor: pointer;
+// }
+
+// .btn-primary:hover {
+//   background-color: #0056b3;
+//   border-color: #004085;
+// }
