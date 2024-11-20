@@ -28,17 +28,18 @@
   border-radius: 5px; // Optional: to give rounded corners
 }
 
-.search-form {
+.home-search-form{
   position: absolute;
-  width: 30%; // Adjust the width as needed
-  bottom: 250px; // Adjust as needed
+  width: 40%; // Adjust the width as needed
+  bottom: 200px; // Adjust as needed
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   justify-content: center;
+  background-color: transparent;
 }
 
-.search-input {
+.home-search-input {
   padding: 5px;
   border: 1px solid #ffffff;
   border-radius: 50px 0 0 50px;
@@ -46,7 +47,7 @@
   flex-grow: 1; // Allow the input to take up available space
 }
 
-.search-button {
+.home-search-button {
   padding: 5px 10px;
   border: 0px solid #ffffff;
   border-left: none;

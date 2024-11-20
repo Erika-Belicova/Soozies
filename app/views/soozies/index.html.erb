@@ -27,8 +27,7 @@
         <% end %>
         <div class="card-content">
           <h3><%= soozie.first_name %></h3>
-          <%= link_to 'View', '#', class: 'btn btn-primary' %>
-          <%= link_to 'Book', '#', class: 'btn btn-secondary' %>
+          <%= link_to 'View', soozie_path(soozie), class: 'btn btn-primary' %>
         </div>
       </div>
     <% end %>
