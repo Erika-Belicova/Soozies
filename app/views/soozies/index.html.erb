@@ -1,16 +1,25 @@
+<div class="index-container">
 
-<div class="card-category">
-  <div class="cards">
-    <% @soozies.each do |soozie| %>
-      <div class="card">
-        <% if soozie.photo.attached? %>
-          <%= cl_image_tag soozie.photo.key, class: "card-image" %>
-        <% end %>
-        <div class="card-content">
-          <h3><%= soozie.first_name %></h3>
-          <%= link_to 'View', soozie_path(soozie), class: 'btn btn-primary' %>
+  <div class="card-category-index">
+    <div class="cards">
+      <% @soozies.each do |soozie| %>
+        <div class="card">
+          <% if soozie.photo.attached? %>
+            <%= cl_image_tag soozie.photo.key, class: "card-image" %>
+          <% end %>
+          <div class="card-content">
+            <h3><%= soozie.first_name %></h3>
+            <%= link_to 'View', soozie_path(soozie), class: 'btn btn-primary' %>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
+
+  <div style="width: 30%; height: 100vh;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
 </div>
