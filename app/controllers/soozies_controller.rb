@@ -4,6 +4,9 @@ class SooziesController < ApplicationController
 
   def index
     @soozies = Soozie.all
+    if params[:query].present?
+      @soozies = @soozies.where("city ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
   def show
