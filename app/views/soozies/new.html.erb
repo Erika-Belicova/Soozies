@@ -1,7 +1,30 @@
 <h2 class = "profile">Create your Soozie profile</h2>
 <div class="form-container">
 <%= form_with model: @soozie do |form| %>
+  <% if @soozie.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@soozie.errors.count, "error") %>, please fill missing information:</h2>
+
+      <ul>
+        <% @soozie.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
 <div class="form-grid">
+
+<div class="form-group">
+      <%= form.label :first_name %>
+      <%= form.text_field :first_name , class: "form-city w-100" %>
+    </div>
+
+<div class="form-group">
+      <%= form.label :last_name %>
+      <%= form.text_field :last_name, class: "form-city w-100" %>
+    </div>
 
 <div class="form-group">
     <%= form.label :photo %>
@@ -42,10 +65,17 @@
       <%= form.label :city %>
       <%= form.text_field :city , class: "form-city w-100" %>
     </div>
+
+
+  <div class="form-group">
+      <%= form.label :description %>
+      <%= form.text_field :description , class: "form-description" %>
+    </div>
+
   </div>
 
   <div class="form-actions">
-      <%= link_to "Back", user_path(@user), class: "btn btn-secondary" %>
+      <%= link_to "Back", user_path(current_user), class: "btn btn-secondary" %>
       <%= form.submit "Create Profile", class: "btn btn-primary" %>
     </div>
 

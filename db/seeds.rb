@@ -42,8 +42,8 @@ Rails.root.join("db/seeds/soozies").children.each do |filepath|
     price: rand(150..1000),
     hair_color: ["blond", "brown", "ginger", "grey"].sample,
     eye_color: ["blue", "brown", "red", "green"].sample,
-    height: rand(1.0..2.0),
-    weight: rand(30..150),
+    height: rand(1.5..2.0),
+    weight: rand(50..150),
     user: User.all.sample
   )
   soozie.photo.attach(io: file, filename: "#{username}.jpg", content_type: "image/jpg")
