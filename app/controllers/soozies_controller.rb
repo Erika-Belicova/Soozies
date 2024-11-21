@@ -4,6 +4,13 @@ class SooziesController < ApplicationController
 
   def index
     @soozies = Soozie.all
+    # The `geocoded` scope filters only flats with coordinates
+    @markers = @soozies.geocoded.map do |soozie|
+      {
+        lat: soozie.latitude,
+        lng: soozie.longitude
+      }
+    end
   end
 
   def show
@@ -46,7 +53,7 @@ class SooziesController < ApplicationController
   def soozie_params
     params.require(:soozie).permit(
       :first_name, :last_name, :description, :gender, :city, :available,
-      :price, :age, :hair_color, :eye_color, :height, :weight, :user
+      :price, :age, :hair_color, :eye_color, :height, :weight, :user, :longitude, :latitude
     )
   end
 end
