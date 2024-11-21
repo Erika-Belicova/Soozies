@@ -8,11 +8,15 @@
 @import "bootstrap";
 @import "font-awesome";
 @import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
+@import url("https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css");
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 @import "components/form_soozies";
+
+
+
 
 html, body {
   height: 100%;

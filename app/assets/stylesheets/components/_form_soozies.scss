@@ -59,6 +59,17 @@ form {
   background-size: 12px;
 }
 
+
+.form-description {
+  width: 210%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  background-size: 12px;
+}
+
 .form-control::-ms-expand {
   display: none; /* Remove default arrow in IE */
 }

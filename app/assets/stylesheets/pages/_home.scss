@@ -28,17 +28,6 @@
   border-radius: 5px; // Optional: to give rounded corners
 }
 
-.home-search-form{
-  position: absolute;
-  width: 40%; // Adjust the width as needed
-  bottom: 200px; // Adjust as needed
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  background-color: transparent;
-}
-
 .home-search-input {
   padding: 5px;
   border: 1px solid #ffffff;
@@ -66,4 +55,15 @@
 
 .search-button:hover {
   background-color: #ffffff;
+}
+
+.home-d-flex{
+  position: absolute;
+  width: 40%; // Adjust the width as needed
+  bottom: 200px; // Adjust as needed
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
 }
