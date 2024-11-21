@@ -3,5 +3,5 @@
 <p>My Soozies: <%=  @soozies.each do |soozie| %>
   <%= soozie %>
 <% end %></p>
-<%= link_to "My offers", offers_path, class: "btn btn-primary" %>
+<%= link_to "My offers", user_offers_path(@user), class: "btn btn-primary" %>
 <%= link_to "New Soozie", new_soozie_path, class: "btn btn-primary" %>

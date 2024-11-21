@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_soozie, only: [:create]
-  before_action :set_booking, only: [:show, :edit, :update]
+  before_action :set_booking, only: [:show, :edit, :update, :validate_booking]
 
   def index
     @bookings = current_user.bookings
@@ -32,6 +32,11 @@ class BookingsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def validate_booking
+    @booking.update(validated: true)
+    redirect_to user_offers_path(current_user)
   end
 
   private
