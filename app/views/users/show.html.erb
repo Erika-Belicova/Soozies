@@ -1,7 +1,67 @@
-<h1>My Soozies</h1>
+<h1>Profile'User</h1>
 <p>Signed in as: <%=  @user.email %></p>
-<p>My Soozies: <%=  @soozies.each do |soozie| %>
-  <%= soozie %>
-<% end %></p>
-<%= link_to "My offers", offers_path, class: "btn btn-primary" %>
-<%= link_to "New Soozie", new_soozie_path, class: "btn btn-primary" %>
+
+<div class="card-soozie">
+  <div class="container p-4">
+    <div class="row shadow rounded-md p-4 bg-white">
+      <div class="col-6">
+        <div class="d-flex justify-content-center align-items-center">
+            <% if @user.photo.attached? %>
+              <%=cl_image_tag @user.photo.key, style: "max-height: 450px; border-radius:16px;"%>
+            <% end %>
+        </div>
+      </div>
+      <div class="col-6" style="display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; width: 100%;">
+
+          <div>
+            <div>Name</div>
+            <div class='field-form'><%= @user.name %></div>
+          </div>
+
+
+          <div>
+            <div>Email</div>
+            <div class='field-form'><%= @user.email %></div>
+          </div>
+
+          <div>
+            <div>Username</div>
+            <div class='field-form'><%= @user.username %></div>
+          </div>
+
+          <div>
+            <div>Location</div>
+            <div class='field-form'><%= @user.city %></div>
+
+          </div>
+
+          <div class= "card-my-soozies" >
+          <h1>My Soozies :</h1>
+            <% @soozies.each do |soozie| %>
+            <div class="d-flex align-items-center">
+            <div class ="card-conf">
+            <div>
+            <% if soozie.photo.attached? %>
+            <%= cl_image_tag soozie.photo.key, style: "max-height: 100px; border-radius:16px;" %>
+            <%end%>
+          </div>
+          <div>
+            <%= soozie.first_name %> - <%= soozie.last_name %>
+          </div>
+          </div>
+            <% end %>
+          </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+ <div class="d-flex justify-content-end">
+          <%= link_to  "Back", user_session_path, class: "btn-primary-pastel me-2" %>
+          <%=link_to "My offers", offers_path, class:"btn-dark ms-2"%>
+          <%= link_to "Add a New Soozie", new_soozie_path, class: "btn-dark ms-2" %>
+        </div>
+  </div>
+</div>
