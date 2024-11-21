@@ -10,6 +10,8 @@ class SooziesController < ApplicationController
         lat: soozie.latitude,
         lng: soozie.longitude
       }
+    end
+
     if params[:query].present?
       @soozies = @soozies.where("city ILIKE ?", "%#{params[:query]}%")
     end
