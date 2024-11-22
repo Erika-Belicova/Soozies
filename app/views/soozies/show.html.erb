@@ -4,6 +4,11 @@
     <div class="row shadow rounded-md p-4 bg-white">
       <div class="col-6">
         <div class="d-flex justify-content-center align-items-center">
+          <% if @soozie.photo.attached? %>
+            <%= cl_image_tag @soozie.photo.key, style: "max-height: 450px; border-radius:16px;" %>
+          <% else %>
+            <%= image_tag "logo.png", style: "max-height: 450px; border-radius:16px;"  %>
+          <% end %>
         </div>
       </div>
       <div class="col-6" style="display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end;">
@@ -82,7 +87,7 @@
                         as: :string,
                         input_html: { data: { controller: "datepicker" } } %>
           </div>
-
+ 
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <%= f.submit "Confirm", class: "btn btn-primary" %>

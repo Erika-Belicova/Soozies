@@ -56,7 +56,7 @@ class SooziesController < ApplicationController
 
   def soozie_params
     params.require(:soozie).permit(
-      :first_name, :last_name, :description, :gender, :city, :available,
+      :photo, :first_name, :last_name, :description, :gender, :city, :available,
       :price, :age, :hair_color, :eye_color, :height, :weight, :user, :longitude, :latitude
     )
   end
