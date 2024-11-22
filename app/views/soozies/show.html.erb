@@ -72,7 +72,11 @@
   <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
 
-      <%= simple_form_for [@soozie, @booking] do |f| %>
+      <%= simple_form_for [@soozie, @booking], html: {
+                      data: {
+                        controller: 'datepicker'
+                      }
+                    } do |f| %>
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">Book <%= @soozie.name %></h1>
@@ -81,13 +85,21 @@
           <div class="modal-body">
            <%= f.input :start_date,
                         as: :string,
-                        input_html: { data: { controller: "datepicker" } } %>
+                                      input_html: {
+                                        data: {
+                                          datepicker_target: 'startDateInput',
+                                        }
+                                      } %>
 
             <%= f.input :end_date,
                         as: :string,
-                        input_html: { data: { controller: "datepicker" } } %>
+                                      input_html: {
+                                        data: {
+                                          datepicker_target: 'endDateInput'
+                                        }
+                                      } %>
           </div>
- 
+
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <%= f.submit "Confirm", class: "btn btn-primary" %>
