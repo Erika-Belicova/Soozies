@@ -9,7 +9,13 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
 
-  resources :bookings, only: :index
-  resources :offers, only: :index
-  resources :users, only: [:show]
+  resources :bookings, only: [:index] do
+    member do
+      patch "/validate", to: "bookings#validate_booking"
+    end
+  end
+
+  resources :users, only: [:show] do
+    resources :offers, only: :index
+  end
 end

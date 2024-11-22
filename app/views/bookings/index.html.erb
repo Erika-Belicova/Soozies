@@ -4,7 +4,6 @@
   <% @bookings.each do |booking| %>
     <div class="my-4 card-product">
       <div class="d-flex align-items-center">
-        <%= cl_image_tag booking.soozie.photo.key %>
         <div class="card-product-infos">
           <h2><%= booking.soozie.first_name %></h2>
           <p>From <strong><%= booking.start_date.to_fs(:long_ordinal) %></strong> to <strong><%= booking.end_date.to_fs(:long_ordinal) %></strong></p>
