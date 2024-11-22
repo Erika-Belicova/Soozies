@@ -10,7 +10,7 @@
             <%= image_tag "logo.png", class: "card-image"  %>
           <% end %>
           <div class="card-content">
-            <h3><%= soozie.first_name %></h3>
+            <p><%= soozie.first_name %></p>
             <%= link_to 'View', soozie_path(soozie), class: 'btn btn-primary' %>
           </div>
         </div>
@@ -18,7 +18,7 @@
     </div>
   </div>
 
-  <div style="width: 30%; height: 100vh;"
+  <div style="width: 30%; height: 100vh" id="map"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">

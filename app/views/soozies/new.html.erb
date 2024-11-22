@@ -18,65 +18,65 @@
 
 <div class="form-group">
       <%= form.label :first_name %>
-      <%= form.text_field :first_name , class: "form-city w-100" %>
+      <%= form.text_field :first_name , class: "form-city w-100", placeholder: "First name"  %>
     </div>
 
 <div class="form-group">
       <%= form.label :last_name %>
-      <%= form.text_field :last_name, class: "form-city w-100" %>
+      <%= form.text_field :last_name, class: "form-city w-100", placeholder: "Last name" %>
     </div>
 
 <div class="form-group">
     <%= form.label :photo %>
-    <%= form.file_field :photo, as: :file, class: "form-control w-100" %>
+    <%= form.file_field :photo, as: :file, class: "form-control w-100", placeholder: "Picture" %>
   </div>
 
   <div class="form-group">
     <%= form.label :eye_color %>
-    <%= form.select :eye_color, options_for_select([['Blue', 'blue'], ['Green', 'green'], ['Brown', 'brown'], ['Hazel', 'hazel']]), {}, class: "form-control w-100" %>
+    <%= form.select :eye_color, options_for_select([["Eye color", ''], ['Blue', 'blue'], ['Green', 'green'], ['Brown', 'brown'], ['Hazel', 'hazel']]), {}, class: "form-control w-100" %>
   </div>
 
   <div class="form-group">
     <%= form.label :hair_color %>
-    <%= form.select :hair_color, options_for_select([['Blonde', 'blonde'], ['Brown', 'brown'], ['Black', 'black'], ['Red', 'red'], ['Gray', 'gray']]), {}, class: "form-control w-100" %>
+    <%= form.select :hair_color, options_for_select([["Hair color", ''], ['Blonde', 'blonde'], ['Brown', 'brown'], ['Black', 'black'], ['Red', 'red'], ['Gray', 'gray']]), {}, class: "form-control w-100" %>
   </div>
 
   <div class="form-group">
     <%= form.label :height %>
-    <%= form.select :height, options_for_select((140..200).step(5).map { |cm| ["#{cm} cm", cm] }), {}, class: "form-control w-100 " %>
+    <%= form.select :height, options_for_select(["Height", ''],(140..200).step(5).map { |cm| ["#{cm} cm", cm] }), {}, class: "form-control w-100 " %>
   </div>
 
   <div class="form-group">
     <%= form.label :weight %>
-    <%= form.select :weight, options_for_select((40..120).step(5).map { |kg| ["#{kg} kg", kg] }), {}, class: "form-control w-100" %>
+    <%= form.select :weight, options_for_select(["Weight", ''],(40..120).step(5).map { |kg| ["#{kg} kg", kg] }), {}, class: "form-control w-100" %>
   </div>
 
   <div class="form-group">
     <%= form.label :gender %>
-    <%= form.select :gender, options_for_select([['Male', 'male'], ['Female', 'female'], ['Other', 'other']]), {}, class: "form-control w-100" %>
+    <%= form.select :gender, options_for_select([["Gender", ''], ['Male', 'male'], ['Female', 'female'], ['Other', 'other']]), {}, class: "form-control w-100" %>
   </div>
 
   <div class="form-group">
     <%= form.label :price %>
-    <%= form.select :price, options_for_select((50..350).step(10).map { |euro| ["#{euro} €", euro] }), {}, class: "form-control w-100" %>
+    <%= form.select :price, options_for_select(["Price", ''],(50..350).step(10).map { |euro| ["#{euro} €", euro] }), {}, class: "form-control w-100" %>
   </div>
 
   <div class="form-group">
       <%= form.label :city %>
-      <%= form.text_field :city , class: "form-city w-100" %>
+      <%= form.text_field :city , class: "form-city w-100", placeholder: "City" %>
     </div>
 
 
   <div class="form-group">
       <%= form.label :description %>
-      <%= form.text_field :description , class: "form-description" %>
+      <%= form.text_field :description , class: "form-description", placeholder: "Description" %>
     </div>
 
   </div>
 
   <div class="form-actions">
       <%= link_to "Back", user_path(current_user), class: "btn btn-secondary" %>
-      <%= form.submit "Create Profile", class: "btn btn-primary" %>
+      <%= form.submit "Create Soozie", class: "btn btn-primary" %>
     </div>
 
 
