@@ -5,7 +5,20 @@ body {
   background-image: none; // Override the background image from home.scss
 }
 
-.card-category {
+.index-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#map {
+  position: fixed;
+  top: 0;
+  background-attachment: fixed;
+}
+
+.card-category-index {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,8 +27,7 @@ body {
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin: 15px;
   background-image: none;
 }
 
@@ -23,6 +35,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+  flex-grow: 1;
 }
 
 // Smallest device

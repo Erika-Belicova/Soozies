@@ -20,7 +20,7 @@ Booking.destroy_all
 puts "Seeding"
 
 Rails.root.join("db/seeds/users").children.each do |filepath|
-  username = filepath.to_s.split("/")[-1].split(".")[0]
+  username = filepath.to_s.split("/")[-1].split(".")[0].split("-")[1]
   file = File.open(filepath)
   puts "Creating user #{username}"
   user = User.new(
@@ -28,7 +28,7 @@ Rails.root.join("db/seeds/users").children.each do |filepath|
      password: "password",
      name: Faker::Name.name,
      city: Faker::Address.city,
-     username: "#{username}"
+     username: username
     )
   user.photo.attach(io: file, filename: "#{username}.jpg", content_type: "image/jpg")
   user.save
@@ -48,8 +48,8 @@ Rails.root.join("db/seeds/soozies").children.each do |filepath|
     price: rand(150..1000),
     hair_color: ["blond", "brown", "ginger", "grey"].sample,
     eye_color: ["blue", "brown", "red", "green"].sample,
-    height: rand(1.0..2.0),
-    weight: rand(30..150),
+    height: rand(1.5..2.0),
+    weight: rand(50..150),
     user: User.all.sample
   )
   soozie.photo.attach(io: file, filename: "#{username}.jpg", content_type: "image/jpg")

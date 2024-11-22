@@ -70,6 +70,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_21_152649) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "age"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_soozies_on_user_id"
   end
 
