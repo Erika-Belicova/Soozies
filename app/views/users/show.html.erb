@@ -1,6 +1,5 @@
 <h1>Profile'User</h1>
 <p>Signed in as: <%=  @user.email %></p>
-
 <div class="card-soozie">
   <div class="container p-4">
     <div class="row shadow rounded-md p-4 bg-white">
@@ -13,29 +12,22 @@
       </div>
       <div class="col-6" style="display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end;">
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; width: 100%;">
-
           <div>
             <div>Name</div>
             <div class='field-form'><%= @user.name %></div>
           </div>
-
-
           <div>
             <div>Email</div>
             <div class='field-form'><%= @user.email %></div>
           </div>
-
           <div>
             <div>Username</div>
             <div class='field-form'><%= @user.username %></div>
           </div>
-
           <div>
             <div>Location</div>
             <div class='field-form'><%= @user.city %></div>
-
           </div>
-
           <div class= "card-my-soozies" >
           <h1>My Soozies :</h1>
             <% @soozies.each do |soozie| %>
@@ -54,14 +46,13 @@
           </div>
           </div>
         </div>
-
       </div>
     </div>
- <div class="d-flex justify-content-end">
-          <%= link_to  "Back", user_session_path, class: "btn-primary-pastel me-2" %>
-          <%=link_to "My offers", user_offers_path(@user), class:"btn-dark ms-2"%>
-          <%= link_to "Add a New Soozie", new_soozie_path, class: "btn-dark ms-2" %>
-        </div>
+
+    </div>
+    <div class="d-flex justify-content-end">
+      <%= link_to  "Back", user_session_path, class: "btn-primary-pastel me-2" %>
+      <%=link_to "My offers", user_offers_path(@user), class:"btn-dark ms-2"%>
+      <%= link_to "Add a New Soozie", new_soozie_path, class: "btn-dark ms-2" %>
   </div>
 </div>
-
