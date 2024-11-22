@@ -16,7 +16,10 @@ body {
   position: fixed;
   top: 0;
   background-attachment: fixed;
+  height: 100vh;
+  position: sticky;
 }
+
 
 .card-category-index {
   display: flex;
