@@ -1,0 +1,7 @@
+<%= link_to soozie_path(soozie) do %>
+  <% if soozie.photo.attached? %>
+    <%= cl_image_tag soozie.photo.key, style: "height: 45px; width: 45px;", class: "rounded-circle" %>
+  <% else %>
+    <%= image_tag "logo.png", style: "height: 45px; width: 45px;", class: "rounded-circle"  %>
+  <% end %>
+<% end %>

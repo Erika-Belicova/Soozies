@@ -5,10 +5,13 @@ class SooziesController < ApplicationController
   def index
     @soozies = Soozie.all
     # The `geocoded` scope filters only flats with coordinates
+    @soozie = Soozie.geocoded
     @markers = @soozies.geocoded.map do |soozie|
       {
         lat: soozie.latitude,
-        lng: soozie.longitude
+        lng: soozie.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {soozie: soozie}),
+        marker_html: render_to_string(partial: "marker",  locals: {soozie: soozie})
       }
     end
 
