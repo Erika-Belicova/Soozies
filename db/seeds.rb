@@ -20,10 +20,16 @@ Booking.destroy_all
 puts "Seeding"
 
 Rails.root.join("db/seeds/users").children.each do |filepath|
-  username = filepath.to_s.split("/")[-1].split(".")[0]
+  username = filepath.to_s.split("/")[-1].split(".")[0].split("-")[1]
   file = File.open(filepath)
   puts "Creating user #{username}"
-  user = User.new(email: "#{username}@example.com", password: "password")
+  user = User.new(
+     email: "#{username}@example.com",
+     password: "password",
+     name: Faker::Name.name,
+     city: Faker::Address.city,
+     username: username
+    )
   user.photo.attach(io: file, filename: "#{username}.jpg", content_type: "image/jpg")
   user.save
 end
