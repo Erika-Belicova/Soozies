@@ -2,16 +2,7 @@
   <h2 class="text-section">Why do it Yourself? Let your Doppelganger handle it!</h2>
 
 
-
- <!-- <form class="home-search-form" action="/search" method="get">
-    <input type="text" name="query" placeholder="Choose a city" class="home-search-input">
-    <button type="submit" class="home-search-button">
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </button>
-  </form>-->
-
-<!--<div class="home-search-form">-->
-  <div>
+<div>
     <%= form_with url: soozies_path, method: :get, class: "home-d-flex" do %>
       <%= text_field_tag :query,
             params[:query],
@@ -21,8 +12,11 @@
         <button type="submit" class="home-search-button">
       <i class="fa-solid fa-magnifying-glass"></i>
     </button>
-      <%#= submit_tag "Search", name: "", class: "home-search-button" %>
     <% end %>
     </div>
-  <!--</div>-->
+
+
+
+
+
 </div>
