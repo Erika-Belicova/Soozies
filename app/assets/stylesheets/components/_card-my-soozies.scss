@@ -14,3 +14,15 @@ h4 {
   color: #0864A7;
   font-size: 60px;
 }
+.flexbox{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item{
+  flex-grow: 1;
+}
+
+.card{
+  row shadow rounded-md p-4 bg-white;
+}
