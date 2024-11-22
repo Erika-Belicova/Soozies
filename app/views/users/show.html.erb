@@ -1,5 +1,4 @@
-<h1>Profile'User</h1>
-<p>Signed in as: <%=  @user.email %></p>
+<h1>User profile</h1>
 <div class="card-soozie">
   <div class="container p-4">
     <div class="row shadow rounded-md p-4 bg-white">
@@ -29,7 +28,7 @@
             <div class='field-form'><%= @user.city %></div>
           </div>
           <div class= "card-my-soozies" >
-          <h1>My Soozies :</h1>
+          <h2>My Soozies :</h2>
             <% @soozies.each do |soozie| %>
             <div class="d-flex align-items-center">
             <div class ="card-conf">
